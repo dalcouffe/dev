@@ -37,7 +37,8 @@ RUN sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/too
   && git clone https://github.com/dalcouffe/oh-my-zsh-custom.git ${HOME}/mycode/oh-my-zsh-custom \
   && mv ${HOME}/.zshrc.pre-oh-my-zsh ${HOME}/.zshrc \
   && git config --global credential.helper 'cache --timeout=21600' \
-  && git config --global branch.master.rebase true
+  && git config --global branch.master.rebase true \
+  && git config --global status.submoduleSummary true
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV LANG en_US.UTF-8
