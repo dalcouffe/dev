@@ -13,9 +13,11 @@ RUN apt-get update \
            stable" \
   && apt-get update \
   && apt-get install -y git zsh sudo unzip htop httpie \
-          tree build-essential tmux vim python-pip docker-ce \
-  && pip install --upgrade pip \
-  && pip install powerline-status "jedi>=0.9.0" "json-rpc>=1.8.1" "service_factory>=0.1.5" autoflake isort pylint \
+          tree build-essential tmux vim python-pip docker-ce
+
+RUN \
+  # pip install --upgrade pip \
+  pip install powerline-status "jedi>=0.9.0" "json-rpc>=1.8.1" "service_factory>=0.1.5" autoflake isort pylint \
   && chsh -s $(which zsh) \
   && useradd -m -s /bin/zsh $USER \
   && echo "$USER ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \

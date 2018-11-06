@@ -1,0 +1,8 @@
+#! /bin/bash -e
+
+docker container run \
+  --rm \
+  -v ${HOME}/docker/kubectl-config:/root/.kube/config \
+  --workdir /k8s \
+  daspoonman/kubectl:${TAG:-latest} \
+  "$@"

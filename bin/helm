@@ -1,0 +1,17 @@
+#! /bin/bash -e
+
+kubeconfig=${KUBECONFIG:-${HOME}/docker/kubectl-config}
+minikube=${HOME}/.minikube
+helm_home=${HELM_HOME:-${HOME}/docker/helm}
+
+docker container run \
+  --rm \
+  --net host \
+  --env-file <(env | grep -E '^(HELM)_') \
+  -v $(pwd):/helm \
+  -v ${minikube}:/root/.minikube \
+  -v ${kubeconfig}:/root/.kube/config \
+  -v ${helm_home}:/root/.helm \
+  --workdir /helm \
+  daspoonman/helm:${TAG:-latest} \
+  "$@"
