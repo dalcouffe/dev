@@ -1,4 +1,4 @@
-FROM daspoonman/base-dev:next
+FROM daspoonman/base-dev:latest
 
 RUN sudo apt-get update \
   && sudo add-apt-repository ppa:kelleyk/emacs \
