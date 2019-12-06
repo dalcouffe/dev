@@ -1,3 +1,3 @@
 #! /bin/bash -e
 
-docker image build --rm --tag=daspoonman/spacemacs:latest .
+docker image build --no-cache --rm --tag=daspoonman/spacemacs:latest .

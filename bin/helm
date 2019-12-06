@@ -9,8 +9,6 @@ docker container run \
   --net host \
   --env-file <(env | grep -E '^(HELM)_') \
   -v $(pwd):/helm \
-  -v ${minikube}:/root/.minikube \
-  -v ${kubeconfig}:/root/.kube/config \
   -v ${helm_home}:/root/.helm \
   --workdir /helm \
   daspoonman/helm:${TAG:-latest} \
