@@ -1,3 +1,3 @@
 #! /bin/bash -e
 
-docker image build --rm --tag=daspoonman/base-dev:latest .
+docker image build --no-cache --rm --tag=daspoonman/base-dev:latest .

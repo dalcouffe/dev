@@ -1,0 +1,12 @@
+version: "2"
+syncs:
+  code-sync:
+    notify_terminal: true
+    src: './code'
+    sync_userid: '1000'
+    sync_excludes: []
+  emacs-cache-sync:
+    notify_terminal: true
+    src: './docker/emacs.cache'
+    sync_userid: '1000'
+    sync_excludes: []
