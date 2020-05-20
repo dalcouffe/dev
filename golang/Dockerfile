@@ -2,7 +2,7 @@ FROM daspoonman/spacemacs:latest
 
 ENV GOROOT=/usr/local/go
 ENV GOPATH=${USER_HOME}/go:${USER_HOME}/code/go
-ENV GOVERSION=1.13.5
+ENV GOVERSION=1.14.3
 ENV PATH=${PATH}:${GOROOT}/bin:${USER_HOME}/go/bin:${USER_HOME}/code/go/bin
 
 RUN curl -k -o /tmp/go.tar.gz https://storage.googleapis.com/golang/go${GOVERSION}.linux-amd64.tar.gz \
