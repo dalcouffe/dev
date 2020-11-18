@@ -10,3 +10,8 @@ syncs:
     src: './docker/emacs.cache'
     sync_userid: '1000'
     sync_excludes: []
+  zsh-history-sync:
+    notify_terminal: true
+    src: './zsh_history'
+    sync_userid: '1000'
+    sync_excludes: []
