@@ -29,7 +29,8 @@ RUN curl -k -o /tmp/go.tar.gz https://storage.googleapis.com/golang/go${GOVERSIO
   && go get -u -v github.com/josharian/impl \
   && go get -u -v github.com/rogpeppe/godef \
   && go get -u -v google.golang.org/grpc \
-  && go get -u -v github.com/golang/protobuf/protoc-gen-go
+  && go get -u -v github.com/golang/protobuf/protoc-gen-go \
+  && go get -u -v github.com/stretchr/testify
   # && go get github.com/fullstorydev/grpcurl \
   # && go install github.com/fullstorydev/grpcurl/cmd/grpcurl
 
