@@ -15,7 +15,7 @@ RUN curl -k -o /tmp/go.tar.gz https://storage.googleapis.com/golang/go${GOVERSIO
   && curl -o /tmp/protoc/protoc.zip -L https://github.com/protocolbuffers/protobuf/releases/download/v3.6.1/protoc-3.6.1-linux-x86_64.zip \
   && sh -c 'cd /tmp/protoc && unzip protoc.zip && sudo cp ./bin/protoc /usr/local/bin && sudo cp -r ./include/* /usr/local/include' \
   && rm -rf /tmp/protoc \
-  && GO111MODULE=on CGO_ENABLED=0 go get -v -trimpath -ldflags '-s -w' github.com/golangci/golangci-lint/cmd/golangci-lint \
+  && CGO_ENABLED=0 go get -v -trimpath -ldflags '-s -w' github.com/golangci/golangci-lint/cmd/golangci-lint \
   && go get -u -v golang.org/x/tools/gopls@latest \
   && go get -u -v golang.org/x/tools/cmd/godoc \
   && go get -u -v golang.org/x/tools/cmd/goimports \
@@ -29,9 +29,6 @@ RUN curl -k -o /tmp/go.tar.gz https://storage.googleapis.com/golang/go${GOVERSIO
   && go get -u -v github.com/josharian/impl \
   && go get -u -v github.com/rogpeppe/godef \
   && go get -u -v google.golang.org/grpc \
-  && go get -u -v github.com/golang/protobuf/protoc-gen-go \
-  && go get -u -v github.com/stretchr/testify
-  # && go get github.com/fullstorydev/grpcurl \
-  # && go install github.com/fullstorydev/grpcurl/cmd/grpcurl
-
-ENV GO111MODULE=on
+  && go get -u -v github.com/golang/protobuf/protoc-gen-go
+  # && GO111MODULE=off go get -u -v github.com/fullstorydev/grpcurl \
+  # && GO111MODULE=off go install github.com/fullstorydev/grpcurl/cmd/grpcurl
